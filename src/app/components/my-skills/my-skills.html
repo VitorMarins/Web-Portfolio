@@ -1,76 +1,11 @@
 <div class="bg-[#a7a7a7] text-white p-10">
   <h2 class="text-4xl mb-6 text-center">My Skills</h2>
   <div class="flex flex-wrap items-center justify-center gap-8">
-
-    <div class="flex flex-col items-center">
-      <img src="https://cdn.brandfetch.io/typescript.com/w/256/h/256?c=1id5-s0OdQqUgvVvv5A" alt="TypeScript" class="w-28 h-28">
-      <p class="mt-2">TypeScript</p>
-    </div>
-
-    <div class="flex flex-col items-center">
-      <img src="https://cdn.brandfetch.io/angularjs.org/w/400/h/400?c=1id5-s0OdQqUgvVvv5A" alt="Angular" class="w-28 h-28 rounded-full">
-      <p class="mt-2">Angular</p>
-    </div>
-
-    <div class="flex flex-col items-center">
-      <img src="/assets/react.svg" alt="React" class="w-28 h-28">
-      <p class="mt-2">React</p>
-    </div>
-
-    <div class="flex flex-col items-center">
-      <img src="/assets/nodejs.svg" alt="Node.js" class="w-28 h-28">
-      <p class="mt-2">Node.js</p>
-    </div>
-
-    <div class="flex flex-col items-center">
-      <img src="assets/expressjs.svg" alt="Express.js" class="w-32 h-32">
-      <p class="mt-2">Express.js</p>
-    </div>
-
-    <div class="flex flex-col items-center">
-      <img src="https://cdn.brandfetch.io/mysql.com/w/512/h/348/logo?c=1id5-s0OdQqUgvVvv5A" alt="MySQL" class="w-28 h-28">
-      <p class="mt-2">MySQL</p>
-    </div>
-
-    <div class="flex flex-col items-center">
-      <img src="https://cdn.brandfetch.io/postgresql.com/w/496/h/512/logo?c=1id5-s0OdQqUgvVvv5A" alt="PostgreSQL" class="w-28 h-28">
-      <p class="mt-2">PostgreSQL</p>
-    </div>
-
-    <div class="flex flex-col items-center">
-      <img src="https://cdn.brandfetch.io/java.com/w/379/h/512/logo?c=1id5-s0OdQqUgvVvv5A" alt="Java" class="w-28 h-28">
-      <p class="mt-2">Java</p>
-    </div>
-
-    <div class="flex flex-col items-center">
-      <img src="https://cdn.brandfetch.io/mongodb.com/w/400/h/400?c=1id5-s0OdQqUgvVvv5A" alt="MongoDB" class="w-28 h-28 rounded-full">
-      <p class="mt-2">MongoDB</p>
-    </div>
-
-    <div class="flex flex-col items-center">
-      <img src="https://cdn.brandfetch.io/tailwindcss.com/w/400/h/400?c=1id5-s0OdQqUgvVvv5A" alt="Tailwind CSS" class="w-28 h-28 rounded-full">
-      <p class="mt-2">Tailwind CSS</p>
-    </div>
-
-    <div class="flex flex-col items-center">
-      <img src="https://cdn.brandfetch.io/github.com/w/512/h/502/symbol?c=1id5-s0OdQqUgvVvv5A" alt="GitHub" class="w-28 h-28">
-      <p class="mt-2">GitHub</p>
-    </div>
-
-    <div class="flex flex-col items-center">
-      <img src="https://cdn.brandfetch.io/figma.com/w/341/h/512/symbol?c=1id5-s0OdQqUgvVvv5A" alt="Figma" class="w-28 h-28">
-      <p class="mt-2">Figma</p>
-    </div>
-
-    <div class="flex flex-col items-center">
-      <img src="https://cdn.brandfetch.io/visualstudio.com/w/512/h/512/logo?c=1id5-s0OdQqUgvVvv5A" alt="VS Code" class="w-28 h-28">
-      <p class="mt-2">VS Code</p>
-    </div>
-
-    <div class="flex flex-col items-center">
-      <img src="https://cdn.brandfetch.io/postman.com/w/240/h/240?c=1id5-s0OdQqUgvVvv5A" alt="Postman" class="w-28 h-28 rounded-full">
-      <p class="mt-2">Postman</p>
-    </div>
-
+    @for (habilidade of habilidades; track $index) {
+      <div class="flex flex-col items-center">
+        <img [src]="habilidade.url_img" [alt]="habilidade.nome" class="w-28 h-28 object-contain" [ngClass]="{'rounded-full': habilidade.rounded}">
+        <p class="mt-2">{{habilidade.nome}}</p>
+      </div>
+    }
   </div>
 </div>
